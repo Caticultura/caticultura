@@ -1,0 +1,331 @@
+/* S'aplica a tots els elements per eliminar marges i padding per defecte, 
+i assegurar que el model de caixa sigui consistent */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Es defineix la font principal del cos de la pàgina, utilitzant 'Poppins' */
+body{
+  font-family: 'Poppins', 'sans-serif';
+}
+
+/* La barra de navegació es mostra com una fila amb els elements centrats verticalment i un padding */
+.navbar{
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Es defineix que la navegació ocuparà la resta d'espai disponible (flex) 
+i els elements dins estaran alineats a la dreta */
+nav{
+  flex: 1;
+  text-align: right;
+}
+
+/* La llista de navegació es mostrarà de manera horitzontal (inline-block) i sense cap estil de llista (punts) */
+nav ul{
+  display: inline-block;
+  list-style-type: none;
+}
+
+/* Cada element de la llista de navegació serà un element inline amb un espai a la dreta */
+nav ul li{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* Tots els enllaços no tindran subratllat i el color del text serà gris (#555) */
+a{
+  text-decoration: none;
+  color: #555;
+}
+
+/* El color del text dels paràgrafs serà gris (#555) */
+p{
+  color: #555;
+}
+
+/* El contenidor principal tindrà una amplada màxima de 1300px, 
+amb marges automàtics per centrar-lo i un padding intern */
+.container{
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* Les files mostraran els elements de forma flexible, alineats verticalment al centre, 
+permetent que els elements es moguin a la següent línia si no hi ha prou espai */
+.row{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Les columnes tindran una amplada base del 50%, amb una mida mínima de 100px */
+.col2{
+  flex-basis: 50%;
+  min-width: 100px;
+}
+
+/* Les imatges dins de .col2 ocuparan el 100% de l'espai disponible i tindran un padding vertical */
+.col2 img{
+  max-width: 100%;
+  padding: 50px 0;
+}
+
+/* Els títols dins de .col2 tindran una mida de lletra gran (50px) i un marge entre línies */
+.col2 h1{
+  font-size: 50px;
+  line-height: 60px;
+  margin: 25px 0;
+}
+
+/* Els botons es mostraran com elements en línia amb fons verd (#15b975), text blanc, 
+padding intern, marge extern i cantonades arrodonides, amb una transició per quan es passi per sobre */
+.btn{
+  display: inline-block;
+  background: #15b975;
+  color: #fff;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+
+/* Quan es passi el ratolí per sobre del botó, el fons es farà més fosc */
+.btn:hover{
+  background: #053f18;
+}
+
+/* El fons de la capçalera és un gradient radial des de blanc fins al verd (#15b975), 
+ocupant tota l'amplada i alçada de la vista */
+.header{
+  background: radial-gradient(#fff, #15b975);
+  width: 100%;
+  height: 100vh;
+}
+
+/* Les files dins de la capçalera tindran un marge superior */
+.header .row{
+  margin-top: 50px;
+}
+
+/* Les categories tindran un marge vertical */
+.categories{
+  margin: 70px 0;
+}
+
+/* Les columnes amb .col-3 tindran una base del 30% amb una amplada mínima de 250px, 
+i un marge inferior */
+.col-3{
+  flex-basis: 30%;
+  min-width: 250px;
+  margin-bottom: 30px;
+}
+
+/* Les imatges dins de .col-3 ocuparan el 100% de l'espai disponible */
+.col-3 img{
+  width: 100%;
+}
+
+/* El contenidor petit (small-container) tindrà una amplada màxima de 1080px amb padding intern */
+.small-container{
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 30px;
+  padding-right: 25px;
+}
+
+/* Les columnes amb .col-4 tindran una base del 25%, amb padding intern, 
+mida mínima, marge inferior i una transició per al moviment */
+.col-4{
+  flex-basis: 25%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  transition: transform 0.5s;
+}
+
+/* Les imatges dins de .col-4 ocuparan el 100% de l'espai disponible */
+.col-4 img{
+  width: 100%;
+}
+
+/* Els títols centrats tindran un marge inferior i un efecte decoratiu amb una línia verda */
+.title{
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: #555;
+}
+.title::after{
+  content: '';
+  background: #15b975;
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Els subtítols tindran un color gris i un pes de font normal */
+h4{
+  color: #555;
+  font-weight: normal;
+}
+
+/* Els paràgrafs dins de .col-4 tindran una mida de lletra petita */
+.col-4  p{
+  font-size: 14px;
+}
+
+/* Quan es passi el ratolí per sobre de .col-4, es mourà cap amunt 5 píxels */
+.col-4:hover{
+  transform: translateY(-5px);
+}
+
+/* Les ofertes tindran un fons amb gradient radial, un marge superior i un padding intern */
+.offer{
+  background: radial-gradient(#fff, #15b975);
+  margin-top: 80px;
+  padding: 30px 0;
+}
+
+/* Les imatges dins de .offer tindran un padding intern */
+.col-2 .offer-img{
+  padding: 50px;
+}
+
+/* El text petit tindrà un color gris */
+small{
+  color: #555;
+}
+
+/* La secció de testimonis tindrà un padding superior */
+.testimonial{
+  padding-top: 100px;
+}
+
+/* Les columnes dins de la secció de testimonis tindran text centrat, padding intern, 
+una ombra i es podran clicar amb un efecte de moviment */
+.testimonial .col-3{
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+/* Les imatges dins de .col-3 tindran una amplada de 50px i una forma circular */
+.testimonial .col-3 img{
+  width: 50px;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+
+/* Quan es passi el ratolí per sobre de .col-3, es mourà cap amunt 10 píxels */
+.testimonial .col-3:hover{
+  transform: translateY(-10px);
+}
+
+/* La icona del menú tindrà una mida de 38px i només es mostrarà en pantalles petites */
+.menu-icon{
+  width: 38px;
+  margin-left: 20px;
+  display: none;
+}
+
+/*----- Estils per al menú adaptable -----*/
+/* Quan la mida de la pantalla sigui inferior a 800px, el menú es convertirà en una barra lateral */
+@media only screen and (max-width: 800px){
+
+  /* Els elements del menú es mostraran de forma vertical, ocupant tot l'ample, amb fons fosc */
+  nav ul{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    overflow: hidden;
+    transition: max-height 0.5s;
+  }
+
+  /* Els elements de la llista tindran un marge més gran per a cada element */
+  nav ul li{
+    display: block;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Els enllaços del menú tindran el color blanc */
+  nav ul li a{
+    color: #fff;
+  }
+
+  /* La icona del menú es mostrarà i tindrà el cursor interactiu */
+  .menu-icon{
+    display: block;
+    cursor: pointer;
+  }
+}
+
+/*----- Secció de productes -----*/
+/* La fila de productes es mostrarà amb els elements separats, i es centrarà */
+.row-2{
+  justify-content: space-between;
+  margin: 100px auto 50px;
+}
+
+/* Els elements de selecció tindran un contorn verd i padding */
+select{
+  border: 1px solid #15b975;
+  padding: 5px;
+}
+
+/* Quan es faci clic a l'element de selecció, no es mostrarà el contorn per defecte */
+select:focus{
+  outline: none;
+}
+
+/* Els botons de paginació es mostraran centrats amb un marge inferior */
+.page-btn{
+  margin: 0 auto 80px;
+}
+
+/* Cada botó de paginació serà un quadrat amb contorn verd, i tindrà un efecte de color de fons verd al passar el ratolí */
+.page-btn span{
+  display: inline-block;
+  border: 1px solid #15b975;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+.page-btn span:hover{
+  background: #15b975;
+  color: #fff;
+}
+
+/*----- Adaptabilitat per pantalles petites -----*/
+/* Quan la mida de la pantalla sigui inferior a 600px, les columnes es mostraran de forma vertical i centrada */
+@media only screen and (max-width: 600px){
+  .row{
+    text-align: center;
+  }
+
+  /* Les columnes ocuparan el 100% de l'ample disponible */
+  .col-2, .col-3, .col-4{
+    flex-basis: 100%;
+  }
+}

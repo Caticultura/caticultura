@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <!-- Definició del joc de caràcters del document i adaptació per a dispositius mòbils -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Títol de la pàgina que es mostrarà a la pestanya del navegador -->
+    <title>Caticultura</title>
+    
+    <!-- Enllaç al fitxer CSS extern per estilitzar la pàgina -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Preconnexió a les fonts de Google per millorar el rendiment -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Enllaç a la font Poppins de Google Fonts per utilitzar-la a la pàgina -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,
+                600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Capçalera de la pàgina, que inclou el menú de navegació i el logotip -->
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                
+                <!-- Logotip de la companyia -->
+                <div class="logo">
+                    <img src="imatges/logo.png" alt="logo" width="100px" height="auto">
+                </div>
+
+                <!-- Navegació principal de la pàgina -->
+                <nav>
+                    <ul id="MenuItems">
+                        <!-- Enllaços del menú que porten a diferents seccions de la pàgina -->
+                        <li><a href="#qui-som">Qui som</a></li> <!-- Enllaç a la secció "Qui som" -->
+                        <li><a href="#productes">Productors</a></li> <!-- Enllaç a la secció de productors -->
+                        <li><a href="#contacta">Contacta</a></li> <!-- Enllaç a la secció "Contacta" -->
+                    </ul>
+                </nav>
+
+                <!-- Icona de menú per a versions mòbils, amb funció per desplegar el menú -->
+                <img src="imatges/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+
+            <!-- Secció amb el lema de la pàgina i una imatge -->
+            <div class="row">
+                <div class="col-2">
+                    <!-- Imatge de blat -->
+                    <div>
+                        <img src="imatges/wheat-576264_1280.png" alt="blat" style="margin-left: 45%; width: 200px; 
+                                    height: auto;">
+                    </div> 
+
+                    <!-- Lema de la pàgina -->
+                    <h1>Cuida casa teva,<br> Compra local!</h1>
+                    <p>Som Caticultura, una companyia que cuida el producte local. Amb nosaltres ajudes els pagesos i a
+                         l’agricultura catalana.</p>
+                    
+                    <!-- Botó amb enllaç a la secció d'afiliació -->
+                    <a href="#afiliat" class="btn">Afiliat &#10230;</a> <!-- Enllaç a la secció d'afiliació -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secció "Qui som" amb una descripció personal i del projecte -->
+    <div class="container" id="qui-som">
+        <h2 class="title">Qui som</h2>
+        <h3>
+            Soc un estudiant de batxillerat, de l'institut Montserrat Roig situat a Gràcia, amb molt d'afecte per la 
+            nostra terra. A través d'aquesta web, estic intentant unir el major nombre de pagesos catalans per lluitar 
+            plegats per un preu més just pels productes catalans. La meva missió és donar veu als agricultors locals i 
+            connectar-los directament amb la gent que valora la qualitat i l'origen dels productes que consumeixen. 
+            Crec fermament que, amb el suport de la comunitat, podem construir una economia local més forta, sostenible 
+            i equitativa per a tothom.
+        </h3>
+    </div>
+
+    <!-- Separació visual -->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <!-- Imatge dins -->
+                    <img src="imatges/avis!.png" class="offer-img" width="250px" height="250px">
+                </div>
+                <div class="col-2">
+                    <!-- Text descriptiu -->
+                    <p>Catalunya et necessita</p>
+                    <h1>Quilòmetre 0</h1>
+                    <small>El nostre producte també és teu. A la nostra web només trobaràs productes de la terra.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secció de productors, on es mostren diferents agricultors i els seus productes -->
+    <div class="samall-container" id="productes">
+        <h2 class="title">Productors</h2>
+        <div class="row">
+            <!-- Productor 1 amb una funció per mostrar detalls quan es fa clic -->
+            <div class="col-4" onclick="ampliarProducto(1)">
+                <img src="imatges/persona.jpg">
+                <h4>Pagès 1</h4>
+                <p>La selva</p>
+                <div class="detalles" id="producto1" style="display: none;">
+                    <p>4T de blat</p>
+                    <p>Certificació ecològica</p>
+                </div>
+            </div>
+            <!-- Productor 2 -->
+            <div class="col-4" onclick="ampliarProducto(2)">
+                <img src="imatges/persona.jpg">
+                <h4>Pagès 2</h4>
+                <p>Priorat</p>
+                <div class="detalles" id="producto2" style="display: none;">
+                    <p>6T de blat</p>
+                    <p>Certificació ecològica</p>
+                </div>
+            </div>
+            <!-- Productor 3 -->
+            <div class="col-4" onclick="ampliarProducto(3)">
+                <img src="imatges/persona.jpg">
+                <h4>Pagès 3</h4>
+                <p>Lleida</p>
+                <div class="detalles" id="producto3" style="display: none;">
+                    <p>3,45T de blat</p>
+                    <p>Certificació ecològica</p>
+                </div>
+            </div>
+            <!-- Productor 4 -->
+            <div class="col-4" onclick="ampliarProducto(4)">
+                <img src="imatges/persona.jpg">
+                <h4>Pagès 4</h4>
+                <p>Ebre</p>
+                <div class="detalles" id="producto4" style="display: none;">
+                    <p>9T de blat</p>
+                    <p>Producte fresc i ecològic</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Separació visual amb el preu del blat -->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <h1>Preu del Blat per Kg: ----</h1>
+                    <small>El preu just per fer funcionar la nostra terra.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secció de contacte amb una descripció del fundador -->
+    <div class="testimonial" id="contacta">
+        <div class="small-container">
+            <div class="row">
+                <!-- Descripció personal del fundador Martí Soler -->
+                <div class="col-3" onclick="ampliarSoler()">
+                    <h1>❝</h1>
+                    <p>Fundador i creador de la companyia Caticultura.</p>
+                    <img src="imatges/marti.jpg">
+                    <h3>Martí Soler</h3>
+                    <div class="detalles" id="detalles-soler" style="display: none;">
+                        <p>catalunyaiagricultura@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Secció d'afiliació amb un formulari de Google Forms -->
+        <div style="background: #15b975; height: 250px;" id="afiliat">
+            <img src="imatges/logo.png" alt="logo" width="130px" height="auto" style="margin-top: 50px;">
+            <form action="https://formspree.io/f/your_form_id" method="POST">
+                <div style="background: #15b975; height: 250px; display: flex; align-items: center; justify-content: 
+                    center;">
+                    <!-- Botó per accedir al formulari d'afiliació -->
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSelMCh79qIiurfJNGF7y6NVJxtgpi_xQaE79X_pl9V4YqOJog
+                            /viewform?usp=sf_link" target="_blank" 
+                            style="text-decoration: none; background-color: white; padding: 10px 20px; border-radius: 
+                            5px; color: black; font-weight: bold;">Afiliat/Mes info
+                            </a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Scrips de JavaScript per controlar el menú i mostrar detalls -->
+    <script>
+        // Funció per mostrar més informació sobre un productor seleccionat
+        function ampliarProducto(numeroProducto) {
+            var detalles = document.getElementById("producto" + numeroProducto);
+            if (detalles.style.display === "none") {
+                detalles.style.display = "block";
+            } else {
+                detalles.style.display = "none";
+            }
+        }
+
+        // Funció per mostrar la informació addicional de Martí Soler
+        function ampliarSoler() {
+            var detalles = document.getElementById("detalles-soler");
+            if (detalles.style.display === "none") {
+                detalles.style.display = "block";
+            } else {
+                detalles.style.display = "none";
+            }
+        }
+
+        // Funció per mostrar o amagar el menú en dispositius mòbils
+        function menutoggle() {
+            var MenuItems = document.getElementById("MenuItems");
+            if (MenuItems.style.maxHeight === "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+</body>
+</html>
